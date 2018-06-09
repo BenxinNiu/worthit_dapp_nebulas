@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="index page">
+    <meta name="author" content="Benxin Niu">
+
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="public/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+
+    <script src="js/shared/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="header">
+      <div class="container">
+          <img src="public/logo/logo.png" width="120px" />
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+
+        <h1>{{ title }}</h1>
+        <h2>{{ promo }}</h2>
+
+        <div ng-repeat="product in products"class="col-md-6">
+          <div class="thumbnail topic">
+           <!-- <img ng-src="{{product.cover}}"> -->
+            <p class="title">{{product.name | uppercase}} </p>
+            <!-- <p class="price">{{product.price | currency}} </p> -->
+            <p class="date"> {{product.pubdate | date}}</p>
+            <p class="story">{{product.story}}</p>
+            <div class="worthit">
+              <p class="exp_tag">Overall Experience:
+                <i ng-show={{product.worthit}} id="exp_reaction" class="far fa-smile"></i>
+                <i ng-show=!{{product.worthit}} id="exp_reaction" class="far fa-frown"></i> </p>
+            </div>
+            <div class="voting">
+              <p class="vote_up"  ng-click="plusOne($index)"
+              ><i class="fas fa-thumbs-up"></i>
+              {{product.likes}}</p>
+           <p class="vote_down" ng-click="minusOne($index)"><i class="fas fa-thumbs-down"></i>
+             {{product.dislikes}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <h2>Powered by Nebulas</h2>
+        <img src="public/logo/neb.jpg" width="120px" />
+      </div>
+    </div>
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+  </body>
+</html>
