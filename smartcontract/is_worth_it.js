@@ -25,7 +25,7 @@ is_worth_it.prototype = {
 
   getTagsCount: function(){
     return this.tag_list.lenght;
-  }
+  },
 
   getUserCount: function(){
     return this.num_user;
@@ -34,21 +34,38 @@ is_worth_it.prototype = {
   createVote: function(req){
     const from_address = Blockchain.transaction.from;
     const json_req = JSON.parse(req);
-
-  }
+    _modifiy_topic(req.id,req.condition);
+  },
 
   getTopics: function(){
     const json_res = {
       "tags": this.tag_list,
       "topics": this.topic_bucket
     }
-    return json_res;
-  }
+    return JSON.stringify(json_res);
+  },
 
   createNewTopic: function(req){
     var topic = _formatTopic(req);
     _update_usr_topic_list(topic);
     _update_topic_bucket(topic);
+  },
+
+  _modifiy_topic: function(id, condition){
+    var i;
+    for (i=0; i<this.topic_bucket.length;i++){
+      if(this.topic_bucket[i].id==id){
+      if(condition=="upvote"){
+        var up=parseInt(this.topic_bucket[i].upvote) + 1;
+        this.topic_bucket[i].upvote = up;
+      }
+      else{
+        var down=parseInt(this.topic_bucket[i].downvote) + 1;
+        this.topic_bucket[i].downvote = down;
+      }
+     break;
+    }
+    }
   },
 
   _update_topic_bucket: function(topic){
@@ -59,7 +76,7 @@ is_worth_it.prototype = {
 
   _update_usr_topic_list: function(topic){
     var usr_topics = this.topics.get(topic.user_id);
-    if(!usr_topic){
+    if(!usr_topics){
       this.topics.put(topic.user_id, [topic.id]);
     }
     else {
@@ -78,9 +95,11 @@ is_worth_it.prototype = {
       this.user.put(from_address,usr);
     }
     json.user_id = usr;
+    json.user_addr = from_address;
     json.id = this.topic_bucket.length;
     return json;
   }
 
 
 }
+module.exports=is_worth_it;
