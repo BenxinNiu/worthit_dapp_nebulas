@@ -21,3 +21,4 @@ var test_string = ["{\"id\":1, \"condition\": \"upvote\"}"]
 
 
 var stable_contract_addr_testnet = "n1h7EDDFG3DJ5tizZibHmwRiu4pq5i2UXwu"
+var invition_link = "https://incentive.nebulas.io/signup.html?invite=Y64CA"
