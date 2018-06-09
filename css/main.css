@@ -6,15 +6,17 @@ html, body {
 }
 
 .header {
- padding: 15px;
+ padding: 17px;
 }
 
 .header img {
+  margin-left:-40px;
   width:50%;
    display: inline-block;
 }
 
 .header h1 {
+  width:40%;
    display: inline-block;
 }
 
@@ -24,9 +26,8 @@ html, body {
 }
 
 .main h1 {
- /* color: #F65A5B ; */
 color: #00ABA9;
- font-size: 64px;
+ font-size: 48px;
  margin: 0 0 80px 0;
  padding: 20px 0;
    line-height: 60px;
@@ -65,31 +66,14 @@ color: #00ABA9;
    font-weight: 200;
 }
 
-.price {
- background-color: #39D1B4 ;
- color: #fff;
- font-size: 18px;
-   border-radius: 50%;
-   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-   font-weight: 200;
-   height: 80px;
-   line-height: 80px;
-   text-align: center;
-   width: 80px;
- position: absolute;
- top: -40px;
- right: 20px;
-}
-
-
-
-.worthit{
-  text-align: left;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-  position:relative;
-  top:76px;
+.topic_tag{
+  font-size:10px;
+  background: #a3a3a3;
+  color:#fff;
+  cursor:pointer;
+  display:inline-block;
+  border-radius: 5px;
+  padding:5px;
 }
 
 .exp_tag{
