@@ -55,6 +55,12 @@ color: #00ABA9;
  margin-bottom:48px;
 }
 
+.logo{
+width: 80px;
+ position: absolute;
+ top: 18px;
+ right: 20px;
+}
 
 .title,
 .date {
@@ -87,11 +93,12 @@ color: #00ABA9;
 }
 
 .faq{
-  margin-top:-22px;
-  font-size:3rem;
+  margin-top:-10px;
+  font-size:2.2rem !important;
   width:100%;
   display:none;
-  min-height:270px;
+  min-height:170px;
+  max-height: 170px;
 }
 
 .topic_tag{
