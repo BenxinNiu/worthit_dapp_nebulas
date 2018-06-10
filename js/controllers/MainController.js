@@ -9,7 +9,8 @@ app.controller('MainController',['$scope',function($scope){
     story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
     tag: "study",
     likes:0,
-    dislikes:0
+    dislikes:0,
+    logo: "public/logo/a4.png"
   },
   {
     name: 'Buying a Mustang',
@@ -18,7 +19,8 @@ app.controller('MainController',['$scope',function($scope){
     tag: "Shoping",
     story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa  " ,
     likes:0,
-    dislikes:0
+    dislikes:0,
+    logo: "public/logo/a10.png"
   } ,
     {
     name: 'Sushi at vancouver downtown',
@@ -27,7 +29,8 @@ app.controller('MainController',['$scope',function($scope){
     exp_date: new Date('2014', '03', '08'),
     story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
     likes:0,
-    dislikes:0
+    dislikes:0,
+    logo: "public/logo/a13.png"
   },
   {
     name: 'Using C++ for ML',
@@ -36,7 +39,8 @@ app.controller('MainController',['$scope',function($scope){
     exp_date: new Date('2013', '08', '01'),
     story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
     likes:0,
-    dislikes:0
+    dislikes:0,
+    logo: "public/logo/a20.png"
   },
   {
     name: 'Using C++ for ML',
@@ -44,30 +48,9 @@ app.controller('MainController',['$scope',function($scope){
     story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
     tag: "study",
     likes:0,
-    dislikes:0
+    dislikes:0,
+    logo: "public/logo/a16.png"
   }
-],
-    $scope.plusOne=function(index){
-    $scope.usr_topics[index].likes += 1;
-  };
-
-  $scope.minusOne=function(index){
-    $scope.usr_topics[index].dislikes += 1;
-  };
-  $scope.expand_bar=function(){
-    $('#searchbar-input').animate({width: 'toggle'});
-    $("#searchbar-icon").toggle();
-    $("#searchbar-cross").toggle(500);
-    $('#searchbar-submit').toggle(100);
-};
-  $scope.hide_bar=function(){
-    $('#searchbar-input').animate({width: 'toggle'});
-    $("#searchbar-cross").toggle();
-    $('#searchbar-submit').toggle();
-    $("#searchbar-icon").toggle(500);
-  };
-$scope.expand_faq=function(){
-    $(".faq").toggle(500)
-}
+]
 
 }])
