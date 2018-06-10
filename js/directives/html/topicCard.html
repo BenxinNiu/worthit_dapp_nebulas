@@ -1,0 +1,17 @@
+<div class="thumbnail topic">
+  <img class="logo" ng-src="{{info.logo}}"> </img>
+  <p class="title">{{info.name | uppercase}}</p>
+  <p class="date"> {{info.exp_date | date}}</p>
+  <p class="topic_tag">{{info.tag |uppercase}}</p>
+  <p class="story">{{info.story}}</p>
+  <div class="voting">
+    <p class="exp_tag" >Overall Experience:
+      <i ng-show="info.worthit"  class="far fa-smile"></i>
+      <i ng-show="!info.worthit" class="far fa-frown"></i>
+    </p>
+    <p class="vote_up"  ng-click="plusOne('{{info.logo}}')"><i class="fas fa-thumbs-up"></i>
+    {{info.likes}}</p>
+ <p class="vote_down" ng-click="minusOne('{{info.logo}}')"><i class="fas fa-thumbs-down"></i>
+   {{info.dislikes}}</p>
+  </div>
+</div>
