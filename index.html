@@ -14,79 +14,35 @@
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/searchbar.css" rel="stylesheet" />
     <link href="public/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
-
     <script src="js/shared/angular.min.js"></script>
     <script src="js/shared/jquery.min.js"></script>
   </head>
   <body ng-app="worthit_dapp">
 
-    <div class="header">
-      <div class="container">
-          <img src="public/logo/logo.png" width="120px" />
-      </div>
-    </div>
+    <nav-bar></nav-bar>
 
     <div class="main" ng-controller="MainController">
       <div class="container">
 
         <h1>{{ title }}</h1>
 
-        <div class="searchbar">
-          <input type="text" id="searchbar-input">
-          <i class="fa fa-search" id="searchbar-icon" aria-hidden="true" ng-click="expand_bar()"></i>
-          <i class="fab fa-telegram-plane" id="searchbar-submit" aria-hidden="true"></i>
-          <i class="fa fa-times" id="searchbar-cross" aria-hidden="true" ng-click="hide_bar()"></i>
+      <functional-bar> </functional-bar>
+      <intro-info> </intro-info>
 
-          <p class="createNewTopic"><i class="far fa-comments"></i>Publish New Topic </p>
-        </div>
-
-        <h2>Enhance people's Experience by Sharing yours On Blockchain by Nebulas
-          <p ng-click="expand_faq()">what is this app (click me) <i class="fas fa-question" style="font-size:20px ! important;"></i></p> </h2>
-
-        <div class="faq alert alert-info" role="alert">
-    Worth It DApp is designed to serve as a platform for people sharing their experience in various aspects. For example, a place you visited, a school you went to,
-    an online course you attended, or even something you bought. Sharing your experience by creating a topic and a tag associated with your topic here and telling
-     others what you feel about your experience, was
-    it worth it?
-        </div>
-
-        <div ng-repeat="usr_topic in usr_topics"class="col-md-6">
-          <div class="thumbnail topic">
-           <!-- <img ng-src="{{usr_topic.cover}}"> -->
-            <p class="title">{{usr_topic.name | uppercase}}</p>
-            <!-- <p class="price">{{usr_topic.price | currency}} </p> -->
-            <p class="date"> {{usr_topic.exp_date | date}}</p>
-            <p class="topic_tag">{{usr_topic.tag |uppercase}}</p>
-            <p class="story">{{usr_topic.story}}</p>
-
-            <div class="voting">
-              <p class="exp_tag" >Overall Experience:
-                <i ng-show="usr_topic.worthit"  class="far fa-smile"></i>
-                <i ng-show="!usr_topic.worthit" class="far fa-frown"></i>
-              </p>
-              <p class="vote_up"  ng-click="plusOne($index)"><i class="fas fa-thumbs-up"></i>
-              {{usr_topic.likes}}</p>
-           <p class="vote_down" ng-click="minusOne($index)"><i class="fas fa-thumbs-down"></i>
-
-             {{usr_topic.dislikes}}</p>
-            </div>
-          </div>
-        </div>
-
+      <div ng-repeat="usr_topic in usr_topics"class="col-md-6">
+         <topics-card info="usr_topic"><topics-card>
+      </div>
       </div>
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <h2>Powered by Nebulas</h2>
-        <img src="public/logo/neb.jpg" width="120px" />
-      </div>
-    </div>
+   <footer-bar></footer-bar>
 
-
-    <!-- Modules -->
     <script src="js/app.js"></script>
-    <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
+    <script src="js/directives/topicsCard.js"></script>
+    <script src="js/directives/introInfo.js"></script>
+    <script src="js/directives/functionalBar.js"></script>
+    <script src="js/directives/footer.js"></script>
+    <script src="js/directives/navBar.js"></script>
   </body>
 </html>
