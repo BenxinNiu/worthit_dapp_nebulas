@@ -1,6 +1,11 @@
-app.controller('MainController',['$scope',function($scope){
+app.controller('MainController',['$scope' ,'contractInfo',function($scope,contractInfo){
+  console.log("hi");
+  const contract_address = contractInfo.addr;
+  const callBackUrl = contractInfo.url;
+  const nebPay = contractInfo.nebPay;
+  const updateTopics = function(){ alert('hi')}
+  
   $scope.title="Topics Board";
-  $scope.promo="Share your Experience together",
   $scope.usr_topics=[
   {
     name: 'Studying at MUN',
@@ -21,36 +26,13 @@ app.controller('MainController',['$scope',function($scope){
     likes:0,
     dislikes:0,
     logo: "public/logo/a10.png"
-  } ,
-    {
-    name: 'Sushi at vancouver downtown',
-    worthit: true,
-    tag: "food",
-    exp_date: new Date('2014', '03', '08'),
-    story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
-    likes:0,
-    dislikes:0,
-    logo: "public/logo/a13.png"
-  },
-  {
-    name: 'Using C++ for ML',
-    worthit: false,
-    tag: "study",
-    exp_date: new Date('2013', '08', '01'),
-    story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
-    likes:0,
-    dislikes:0,
-    logo: "public/logo/a20.png"
-  },
-  {
-    name: 'Using C++ for ML',
-    exp_date: new Date('2013', '08', '01'),
-    story: "fbhbfdbaslbdbashf safh acxbhvdfh halvfav fhdvaflahfhasvfljash mnxhcjvahvfhasvs dsadasg dsafgsa sdasdsa " ,
-    tag: "study",
-    likes:0,
-    dislikes:0,
-    logo: "public/logo/a16.png"
   }
-]
+];
+
+  $scope.test = function(){
+    nebPay.simulateCall(contract_address, 0, "getTopics", null, {
+        listener: updateTopics
+    });
+  }
 
 }])
