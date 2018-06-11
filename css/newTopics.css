@@ -1,0 +1,13 @@
+.avator{
+  border: 0.2px;
+  position: relative;
+  padding: 5px !important;
+  border-radius: 0;
+  margin-bottom:48px;
+  display:inline-block;
+
+}
+.avator img{
+  cursor:pointer;
+  width:100px;
+}
