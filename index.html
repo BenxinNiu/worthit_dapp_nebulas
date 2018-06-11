@@ -12,37 +12,43 @@
     <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
+      <link href="css/newTopics.css" rel="stylesheet" />
     <link href="css/searchbar.css" rel="stylesheet" />
     <link href="public/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
     <script src="js/shared/angular.min.js"></script>
+    <script src="js/shared/angular-ui-router.min.js"></script>
     <script src="js/shared/jquery.min.js"></script>
   </head>
   <body ng-app="worthit_dapp">
 
     <nav-bar></nav-bar>
 
+    <!-- <div ng-view> </div> -->
     <div class="main" ng-controller="MainController">
       <div class="container">
+        <h1 ng-click="test()">{{ title }}</h1>
 
-        <h1>{{ title }}</h1>
+        <functional-bar> </functional-bar>
+        <intro-info> </intro-info>
 
-      <functional-bar> </functional-bar>
-      <intro-info> </intro-info>
-
-      <div ng-repeat="usr_topic in usr_topics"class="col-md-6">
-         <topics-card info="usr_topic"><topics-card>
-      </div>
+        <div ng-repeat="usr_topic in usr_topics" class="col-md-6">
+          <topics-card info="usr_topic"> </topics-card>
+        </div>
       </div>
     </div>
 
    <footer-bar></footer-bar>
 
+
     <script src="js/app.js"></script>
+    <script src="js/controllers/TopicsController.js"></script>
     <script src="js/controllers/MainController.js"></script>
     <script src="js/directives/topicsCard.js"></script>
     <script src="js/directives/introInfo.js"></script>
     <script src="js/directives/functionalBar.js"></script>
     <script src="js/directives/footer.js"></script>
     <script src="js/directives/navBar.js"></script>
+    <script src="js/services/sharedContractInfo.js"></script>
+      <script src="js/services/nebPay.js"></script>
   </body>
 </html>
