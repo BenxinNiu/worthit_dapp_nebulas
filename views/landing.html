@@ -1,0 +1,12 @@
+<div class="main" ng-controller="MainController">
+  <div class="container">
+    <h1 ng-click="test()">{{ title }}</h1>
+
+    <functional-bar> </functional-bar>
+    <intro-info> </intro-info>
+
+    <div ng-repeat="usr_topic in usr_topics" class="col-md-6">
+      <topics-card info="usr_topic"> </topics-card>
+    </div>
+  </div>
+</div>
