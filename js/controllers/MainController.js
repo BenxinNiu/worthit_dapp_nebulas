@@ -1,5 +1,4 @@
-app.controller('MainController',['$scope' ,'contractInfo',function($scope,contractInfo){
-  console.log("hi");
+app.controller('MainController',['$scope' ,'$state' ,'contractInfo',function($scope,$state, contractInfo){
   const contract_address = contractInfo.addr;
   const callBackUrl = contractInfo.url;
   const nebPay = contractInfo.nebPay;
@@ -29,7 +28,24 @@ app.controller('MainController',['$scope' ,'contractInfo',function($scope,contra
   }
 ];
 
-  $scope.test = function(){
+    $scope.go = function(page){
+        console.log('hi');
+        $state.go(page);
+    }
+    $scope.expand_bar=function(){
+        $('#searchbar-input').animate({width: 'toggle'});
+        $("#searchbar-icon").toggle();
+        $("#searchbar-cross").toggle(500);
+        $('#searchbar-submit').toggle(100);
+    };
+    $scope.hide_bar=function(){
+        $('#searchbar-input').animate({width: 'toggle'});
+        $("#searchbar-cross").toggle();
+        $('#searchbar-submit').toggle();
+        $("#searchbar-icon").toggle(500);
+    };
+
+    $scope.test = function(){
     nebPay.simulateCall(contract_address, 0, "getTopics", null, {
         listener: updateTopics
     });
