@@ -1,8 +1,15 @@
-<div class="main" ng-controller="MainController">
+<div class="main" ng-controller="MainController as main">
   <div class="container">
-    <h1 ng-click="test()">{{ title }}</h1>
 
-    <functional-bar> </functional-bar>
+    <h1 ng-click="go('newTopic')">{{ title }}</h1>
+    <!--<functional-bar> </functional-bar>-->
+    <div class="searchbar">
+      <input type="text" id="searchbar-input"/>
+      <i class="fa fa-search" id="searchbar-icon" aria-hidden="true" ng-click="expand_bar()"></i>
+      <i class="fab fa-telegram-plane" id="searchbar-submit" aria-hidden="true"></i>
+      <i class="fa fa-times" id="searchbar-cross" aria-hidden="true" ng-click="hide_bar()"></i>
+      <p ng-click="go('newTopic')" class="createNewTopic"><i class="far fa-comments"></i>Publish New Topic </p>
+    </div>
     <intro-info> </intro-info>
 
     <div ng-repeat="usr_topic in usr_topics" class="col-md-6">
