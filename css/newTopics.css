@@ -7,11 +7,14 @@
   margin-bottom:20px;
   display:inline-block;
 }
+.avator_preview{
+  width:50px;
+}
 .avator img{
   cursor:pointer;
   width:80px;
 }
-.new_topic input, textarea{
+.new_topic input, textarea, select{
   margin-bottom: 20px;
   border: 0px solid;
   border-bottom: 2px solid black;
