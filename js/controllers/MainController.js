@@ -2,7 +2,22 @@ app.controller('MainController',['$scope' ,'$state' ,'contractInfo',function($sc
   const contract_address = contractInfo.addr;
   const callBackUrl = contractInfo.url;
   const nebPay = contractInfo.nebPay;
-  const updateTopics = function(){ alert('hi')}
+  const updateTopics = function(res){
+      if(typeof(res)==='string' && resp.startsWith('Error')){
+          alert("Ooops...Something went wrong, Please tey again later....")
+      }
+    //let data = JSON.parse(res);
+    console.log(JSON.parse(res.result));
+    //$scope.usr_topic = data;
+  };
+  const checkExtension = function(){
+      let extension_stats = typeof(webExtensionWallet);
+      if (extension_stats === "undefined"){
+          alert("Nebulas Wallet Extesion not installed...");
+      }
+  };
+
+  checkExtension();
   
   $scope.title="Topics Board";
   $scope.usr_topics=[
