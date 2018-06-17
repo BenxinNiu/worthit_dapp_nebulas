@@ -25,7 +25,7 @@ app.controller('TopicsController',['$scope' ,'contractInfo',function($scope,cont
           alert("Ooops...Something went wrong, Please tey again later....");
       }
       else{
-        $scope.error_msg = ["Submission Successful"]
+        //$scope.error_msg = ["Submission Successful"]
         $("input").val('');
         $("textarea").val('');
       }
