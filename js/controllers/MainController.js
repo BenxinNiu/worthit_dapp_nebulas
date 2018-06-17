@@ -5,12 +5,14 @@ app.controller('MainController',['$scope' ,'$state' ,'contractInfo',function($sc
   const nebPay = contractInfo.nebPay;
 
   const updateTopics = function(res){
-      if(typeof(res)==='string' && resp.startsWith('Error')){
+      if(typeof(res)==='string' && res.startsWith('Error')){
           alert("Ooops...Something went wrong, Please tey again later....")
       }
    let raw = JSON.parse(res.result);
    const cooked = JSON.parse(raw);
    for (let i=0; i<cooked.data.length; i++){
+       cooked.data[i].upvote_clicked = false;
+       cooked.data[i].downvote_clicked = false;
        if (cooked.data[i].worthit === "true")
            cooked.data[i].worthit = true;
        else
@@ -40,7 +42,6 @@ app.controller('MainController',['$scope' ,'$state' ,'contractInfo',function($sc
   $scope.usr_topics=$scope.getTopics();
 
     $scope.go = function(page){
-        console.log('hi');
         $state.go(page);
     }
     $scope.expand_bar=function(){

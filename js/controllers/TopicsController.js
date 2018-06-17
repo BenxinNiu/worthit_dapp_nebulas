@@ -21,7 +21,7 @@ app.controller('TopicsController',['$scope' ,'contractInfo',function($scope,cont
   return msg;
   };
   const onCreateTopic= function(res){
-      if(typeof(res)==='string' && resp.startsWith('Error')){
+      if(typeof(res)==='string' && res.startsWith('Error')){
           alert("Ooops...Something went wrong, Please tey again later....");
       }
       else{
@@ -30,6 +30,7 @@ app.controller('TopicsController',['$scope' ,'contractInfo',function($scope,cont
         $("textarea").val('');
       }
     };
+
 
 $scope.selected_avator = "";
 $scope.title="New Topic";
