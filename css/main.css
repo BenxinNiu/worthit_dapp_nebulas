@@ -46,6 +46,11 @@ color: #00ABA9;
  border-radius: 0;
  margin-bottom:48px;
 }
+.story{
+    overflow-y: auto;
+    max-height:87px;
+    min-height:87px;
+}
 .logo{
 width: 80px;
  position: absolute;
