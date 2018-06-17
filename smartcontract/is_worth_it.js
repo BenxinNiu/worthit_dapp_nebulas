@@ -81,19 +81,18 @@ this.topic_list.put(json_req.id, JSON.stringify(json_req));
 return "Topic created";
 },
 //tested
-createVote: function(req){
-  const json_req = JSON.parse(req);
-  var topic_target = JSON.parse(this.topic_list.get(json_req.id));
-  if(json_req.condition=="upvote"){
-    topic_target.upvote = parseInt(topic_target.upvote) + 1;
+createVote: function(id,condition){
+  var topic_target = JSON.parse(this.topic_list.get(parseInt(id)));
+  if(condition==="upvote"){
+    topic_target.likes = parseInt(topic_target.likes) + 1;
   }
   else{
-    topic_target.downvote = parseInt(topic_target.downvote) + 1;
+    topic_target.dislikes = parseInt(topic_target.dislikes) + 1;
   }
-  this.topic_list.delete(json_req.id);
-  this.topic_list.put(json_req.id, JSON.stringify(topic_target));
+  this.topic_list.delete(parseInt(id));
+  this.topic_list.put(parseInt(id), JSON.stringify(topic_target));
 }
 
-}
+};
 
 module.exports = is_worth_it;
