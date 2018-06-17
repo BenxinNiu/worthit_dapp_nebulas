@@ -39,6 +39,7 @@ color: #00ABA9;
   cursor: pointer;
 }
 .thumbnail {
+ word-wrap: break-word;
  border: 0.2px;
  position: relative;
  padding: 50px;
