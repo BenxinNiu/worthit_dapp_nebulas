@@ -4,6 +4,7 @@
         <p class="createNewTopic" ng-click="submitTopic()"><i class="fab fa-telegram-plane"></i>Publish Now </p>
         <img class="avator_preview" ng-src="{{selected_avator}}">
         <div ng-repeat="msg in error_msg"><p class="alert alert-info">{{msg}}</p></div>
+
         <form class="new_topic">
             <h2> Choose a Topic Title </h2>
             <input id="input_title">
@@ -17,6 +18,7 @@
                 <option value="false">No</option>
             </select>
         </form>
+
         <h2>{{ avator }} </h2>
 <div class="row">
     <div class="col-md-8">
