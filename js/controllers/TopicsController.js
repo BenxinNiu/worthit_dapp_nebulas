@@ -47,12 +47,16 @@ $scope.update_avator = function (index){
 };
 
 $scope.submitTopic = function(){
+  const d = new Date();
   let data = {
     title: $("#input_title").val(),
     tag: $("#input_tag").val(),
     story: $("#input_story").val(),
     worthit: $("#input_worthit").val(),
-    avator: $scope.selected_avator
+    avator: $scope.selected_avator,
+    likes : 0,
+    dislikes: 0,
+    date: new Date(d.getFullYear(),d.getMonth(),d.getDate())
 };
   $scope.error_msg = validate_form(data);
   if($scope.error_msg.length !== 0){
