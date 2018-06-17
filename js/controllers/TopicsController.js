@@ -33,7 +33,7 @@ app.controller('TopicsController',['$scope' ,'contractInfo',function($scope,cont
 
 
 $scope.selected_avator = "";
-$scope.title="New Topic";
+$scope.title="Publish New Topic";
 
 $scope.selected = false;
 $scope.error = false;

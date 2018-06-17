@@ -53,4 +53,4 @@ app.directive('topicsCard', function(contractInfo){
     };
 }
   };
-})
+});
