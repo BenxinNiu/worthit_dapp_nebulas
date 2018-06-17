@@ -9,9 +9,9 @@
       <i ng-show="info.worthit"  class="far fa-smile"></i>
       <i ng-show="!info.worthit" class="far fa-frown"></i>
     </p>
-    <p class="vote_up"  ng-click="plusOne('{{info.id}}')"><i class="fas fa-thumbs-up"></i>
+    <p class="vote_up"  ng-click="voteUp()"><i class="fas fa-thumbs-up"></i>
     {{info.likes}}</p>
- <p class="vote_down" ng-click="minusOne('{{info.id}}')"><i class="fas fa-thumbs-down"></i>
+ <p class="vote_down" ng-click="voteDown()"><i class="fas fa-thumbs-down"></i>
    {{info.dislikes}}</p>
   </div>
 </div>
