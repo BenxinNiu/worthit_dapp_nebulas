@@ -169,7 +169,8 @@ width: 80px;
  font-size: 29px;
  margin-bottom: 18px;
 }
-.footer img {
+.footer img, a {
+  cursor:pointer;
   width:400px;
   border-radius:50%;
    margin: 0 10px;
