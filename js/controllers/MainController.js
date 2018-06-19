@@ -38,7 +38,7 @@ app.controller('MainController',['$scope' ,'$state' ,'contractInfo' ,function($s
   const checkExtension = function(){
       let extension_stats = typeof(webExtensionWallet);
       if (extension_stats === "undefined"){
-          alert("Nebulas Wallet Extesion not installed...");
+          alert("Please install Nebulas Wallet Extesion to use this Dapp..");
       }
   };
 

@@ -1,8 +1,8 @@
 app.factory('contractInfo', function(){
   var NebPay = require("nebpay");
   var nebPay = new NebPay();
-  const contract_address = "n1pDAXD6ovZ9V1srHXxufCRfpMpkMJHuHmp";
-  const callBackUrl = NebPay.config.testnetUrl;
+  const contract_address = "n1m6wT5rtKG39CSJXUfRKZnQwqesG9ZcMYb";
+  const callBackUrl = NebPay.config.mainnetUrl;
 
     return {
       addr : contract_address,
@@ -11,6 +11,3 @@ app.factory('contractInfo', function(){
     };
 
 });
-//n1gGHow91fRHQdHk43mYe1URwTQZsfNzTC4
-//n1h7EDDFG3DJ5tizZibHmwRiu4pq5i2UXwu
-//n1vnBqqkDx74aqtpdBexX1AKzHHbXpfpxTZ
