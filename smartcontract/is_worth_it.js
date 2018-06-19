@@ -4,7 +4,8 @@
 
 //Powered by Nebulas tech
 //Author Benxin Niu
-//License:
+//License: MIT
+// view on github https://github.com/BenxinNiu/worthit_dpp_nebulas.git
 
 
 'use strict' ;
@@ -28,15 +29,15 @@ init :function(){
   this.topic_index = 0;
   this.topice_list_index = 0;
 },
-//tested
+
 getTopicsCount: function(){
   return this.topic_index;
 },
-//tested
+
 getUsersCount: function(){
   return this.user_index;
 },
-//tested
+
 get_one_topic: function(topic_id){
 return this.topic_list.get(topic_id);
 },
@@ -52,7 +53,7 @@ for(var i=0;i<this.topic_index;i++){
 const res = {data: topics};
 return JSON.stringify(res);
 },
-//tested
+
 getTopics: function(){
   var topics = new Array();
   for(var i=0; i<this.topic_index; i++){
@@ -62,7 +63,7 @@ getTopics: function(){
   var res = {data: topics};
   return JSON.stringify(res);
 },
-//tested
+
 createNewTopic: function(req){
 var json_req = JSON.parse(req);
 const from_addr = Blockchain.transaction.from;
@@ -80,7 +81,7 @@ this.topic_list.put(json_req.id, JSON.stringify(json_req));
 
 return "Topic created";
 },
-//tested
+
 createVote: function(id,condition){
   var topic_target = JSON.parse(this.topic_list.get(parseInt(id)));
   if(condition==="upvote"){
